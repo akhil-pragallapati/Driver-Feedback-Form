@@ -1,0 +1,102 @@
+[33mcommit ee9d36f523ab9b29a4d18b714bda533ded000bde[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Sun Mar 17 02:27:19 2024 -0400
+
+    change in post/
+
+[33mcommit ab6a4f6f09f0a7e1bd2edcf4dd36e959643a8ff1[m
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Sun Mar 17 01:50:36 2024 -0400
+
+    making the changes to the API endpoint
+
+[33mcommit 210ec7a86a3d308f2ff6a15b5573186cd3db9ecd[m
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Sun Mar 17 00:24:54 2024 -0400
+
+    update the post/driver-feedback-form-lambda
+
+[33mcommit 221876fc5cdff59126fedf1ca56daeb7df7a9c69[m
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Sat Mar 16 23:03:18 2024 -0400
+
+    update on API Gateway lambda invoke URL
+
+[33mcommit ce61309fdcd15c62413932af9c98ee6174fadc23[m
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Sat Mar 16 22:52:54 2024 -0400
+
+    Updated the API Gateway URL
+
+[33mcommit b18c4f5a64ee9cff2df72d3aa75049eea981ef3f[m
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Sat Mar 16 22:52:35 2024 -0400
+
+    Updated the API Gateway URL
+
+[33mcommit f22af06021aa4980e40f777521de4da6165b8360[m
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Sat Mar 16 22:34:01 2024 -0400
+
+    changes to python server side AWS lambda
+
+[33mcommit aa8d3fdb3c32642cd46f3d9cca83e5e59175ce48[m
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Sat Mar 16 22:24:16 2024 -0400
+
+    Lambda Handler change
+
+[33mcommit bea67450b1097595169cc1939899edf0c019c998[m
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Sat Mar 16 21:49:45 2024 -0400
+
+    Target link production link
+
+[33mcommit 87c9770c7feab60d08dfaa095893114fddbc0308[m
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Sat Mar 16 21:08:35 2024 -0400
+
+    changed the target link
+
+[33mcommit a6eb9a7fa47e9295236b2124e048421c8ec99b21[m
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Sat Mar 16 20:26:41 2024 -0400
+
+    Added the phase 1 of serverless client-side integration using AWS Lambda
+
+[33mcommit 209733b960ed967adf18538b572ee62f88e209ab[m
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Sat Mar 16 19:32:25 2024 -0400
+
+    Complied for production
+
+[33mcommit fbf828992af57368d3a79b281a1c685cfabb6d8f[m
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Fri Mar 15 23:59:38 2024 -0400
+
+    Submission form added
+
+[33mcommit 919c008fd196bb4df406ace57808fce3118b7371[m
+Merge: 701ef48 1786fad
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Fri Mar 15 23:41:24 2024 -0400
+
+    Merge branch 'main' of https://github.com/akhil-pragallapati/Driver-Feedback-Form
+
+[33mcommit 1786fada172c5fed098563949c0ad9731f29fe88[m
+Author: Akhil Pragallapati <94994881+akhil-pragallapati@users.noreply.github.com>
+Date:   Fri Mar 15 23:35:06 2024 -0400
+
+    Delete README.md
+
+[33mcommit 701ef4870c72050381510413c581f5925412957f[m
+Author: Akhil Pragallapati <pragallapatiakhil@gmail.com>
+Date:   Fri Mar 15 23:26:17 2024 -0400
+
+    initial commit
+
+[33mcommit 4d0c78cd8510e50741f10c5d1ee4b75d1a06574f[m
+Author: Akhil Pragallapati <94994881+akhil-pragallapati@users.noreply.github.com>
+Date:   Fri Mar 15 21:03:26 2024 -0400
+
+    Initial commit
