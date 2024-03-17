@@ -2,14 +2,33 @@
 <html>
 
 <script>
-    fetch('https://cx9yv9fop9.execute-api.us-east-1.amazonaws.com/default/driver-feedback-form-lambda')
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+    
+        // Collect form data
+        const formData = new FormData(event.target);
+        const formObject = {};
+        formData.forEach((value, key) => { formObject[key] = value; });
+    
+        // Submit form data using fetch
+        fetch(event.target.action, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formObject)
+        })
         .then(response => response.json())
         .then(data => {
-            console.log('Feedback data:', data);
-            // Process and display feedback data
+            // Display the submitted data
+            document.body.innerHTML += `<p>Name: ${data.name}</p>`;
+            document.body.innerHTML += `<p>Email: ${data.email}</p>`;
+            document.body.innerHTML += `<p>Feedback: ${data.feedback}</p>`;
         })
-        .catch(error => console.error('Error fetching feedback:', error));
-</script>
+        .catch(error => console.error('Error:', error));
+    });
+    </script>
+    
     
 <head>
     <title>Feedback Form</title>
