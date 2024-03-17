@@ -1,0 +1,24 @@
+Resources:
+  FeedbackApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: FeedbackAPI
+
+  FeedbackResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId: !GetAtt FeedbackApi.RootResourceId
+      PathPart: feedback
+      RestApiId: !Ref FeedbackApi
+
+  FeedbackMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: GET
+      ResourceId: !Ref FeedbackResource
+      RestApiId: !Ref FeedbackApi
+      AuthorizationType: NONE
+      Integration:
+        IntegrationHttpMethod: POST
+        Type: AWS_PROXY
+        Uri: !Sub arn:aws:lambda:us-east-1:891377185488:function:driver-feedback-form-lambda
