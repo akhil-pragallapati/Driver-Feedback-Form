@@ -1,41 +1,13 @@
 <!DOCTYPE html>
-<html>
-
-<script>
-    document.querySelector('form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-    
-        // Collect form data
-        const formData = new FormData(event.target);
-        const formObject = {};
-        formData.forEach((value, key) => { formObject[key] = value; });
-    
-        // Submit form data using fetch
-        fetch(event.target.action, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formObject)
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Display the submitted data
-            document.body.innerHTML += `<p>Name: ${data.name}</p>`;
-            document.body.innerHTML += `<p>Email: ${data.email}</p>`;
-            document.body.innerHTML += `<p>Feedback: ${data.feedback}</p>`;
-        })
-        .catch(error => console.error('Error:', error));
-    });
-    </script>
-    
-    
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
 </head>
 <body>
     <h1>Feedback Form</h1>
-    <form action="https://cx9yv9fop9.execute-api.us-east-1.amazonaws.com/default/driver-feedback-form-lambda" method="POST">
+    <form id="feedbackForm" action="https://cx9yv9fop9.execute-api.us-east-1.amazonaws.com/default/driver-feedback-form-lambda" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br>
         <label for="email">Email:</label>
@@ -44,5 +16,30 @@
         <textarea id="feedback" name="feedback" rows="4" required></textarea><br>
         <input type="submit" value="Submit">
     </form>
+
+    <div id="submittedData"></div>
+
+    <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+
+            fetch(this.action, {
+                method: this.method,
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display submitted data
+                document.getElementById("submittedData").innerHTML = `
+                    <p>Feedback submitted successfully!</p>
+                    <p>Name: ${data.name}</p>
+                    <p>Email: ${data.email}</p>
+                    <p>Feedback: ${data.feedback}</p>
+                `;
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
 </body>
 </html>
