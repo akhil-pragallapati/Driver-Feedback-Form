@@ -1,0 +1,66 @@
+import json
+import base64
+import urllib.parse
+import boto3
+
+
+s3 = boto3.client('s3')
+
+def lambda_handler(event, context):
+    # Check if the event body is empty
+    print("Inide the lambda function")
+    if 'body' not in event or not event['body']:
+        return {
+            "statusCode": 400,
+            "body": "Error: No data provided in the request body"
+        }
+
+    try:
+        # Parse the JSON string in the event body into a dictionary
+        #print(event['body'])
+        
+        decoded_data = base64.b64decode(event['body']).decode('utf-8')
+
+        # Print the decoded data
+        #print(decoded_data)
+        print("indise try")
+        
+        decoded_data = urllib.parse.unquote(decoded_data)
+        
+        # Parse the decoded data into key-value pairs
+        data_dict = {}
+        for pair in decoded_data.split('&'):
+            key, value = pair.split('=')
+            data_dict[key] = value
+        
+        # Extract values for 'name', 'email', and 'feedback'
+        name = data_dict.get('name')
+        email = data_dict.get('email')
+        feedback = data_dict.get('feedback')
+        
+        # Print the extracted values
+        print("Name:", name)
+        print("Email:", email)
+        print("Feedback:", feedback)
+
+
+        # Constructing the response
+        response = {
+            "statusCode": 200,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "body": json.dumps({
+                "message": "Feedback submitted successfully!",
+                "name": name,
+                "email": email,
+                "feedback": feedback
+            })
+        }
+
+        return response
+    except json.JSONDecodeError as e:
+        return {
+            "statusCode": 400,
+            "body": f"Error: Failed to parse JSON data - {str(e)}"
+        }

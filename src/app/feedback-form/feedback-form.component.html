@@ -23,23 +23,32 @@
         document.getElementById("feedbackForm").addEventListener("submit", function(event) {
             event.preventDefault();
             var formData = new FormData(this);
-
+    
             fetch(this.action, {
                 method: this.method,
                 body: formData
             })
-            .then(response => response.json())
+            .then(response => {
+                // Check if the response is a redirection
+                if (response.redirected) {
+                    window.location.href = response.url; // Redirect to the specified URL
+                } else {
+                    return response.json(); // Proceed with parsing JSON response if not a redirection
+                }
+            })
             .then(data => {
-                // Display submitted data
+                // Clear form fields
+                document.getElementById("feedbackForm").reset();
+    
+                // Display success message
                 document.getElementById("submittedData").innerHTML = `
                     <p>Feedback submitted successfully!</p>
-                    <p>Name: ${data.name}</p>
-                    <p>Email: ${data.email}</p>
-                    <p>Feedback: ${data.feedback}</p>
                 `;
             })
             .catch(error => console.error('Error:', error));
         });
     </script>
+    
+    
 </body>
 </html>
