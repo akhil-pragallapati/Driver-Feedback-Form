@@ -6,17 +6,27 @@
     <title>Feedback Form</title>
 </head>
 <body>
-    <h1>Feedback Form</h1>
-    <form id="feedbackForm" action="https://m9dxvl0gxl.execute-api.us-east-1.amazonaws.com/prod/Driver-Feedback-Form-Lambda" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
-        <label for="feedback">Feedback:</label>
-        <textarea id="feedback" name="feedback" rows="4" required></textarea><br>
-        <input type="submit" value="Submit">
-    </form>
-
+    <div class="container">
+        <h1 class="driver-form-heading">Driver Feedback Form</h1>
+    
+        <div class="driver-form">
+            <form id="feedbackForm" action="https://m9dxvl0gxl.execute-api.us-east-1.amazonaws.com/prod/Driver-Feedback-Form-Lambda" method="POST">
+                <div class="form-group form-member">
+                    <label  for="name ">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control form-outline" required>
+                </div>
+                <div class="form-group form-member">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control form-outline" required>
+                </div>
+                <div class="form-group form-member">
+                    <label for="feedback">Feedback:</label>
+                    <textarea id="feedback" name="feedback" class="form-control form-outline" rows="4" required></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
     <div id="submittedData"></div>
 
     <script>
